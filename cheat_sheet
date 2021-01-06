@@ -1,0 +1,107 @@
+Go to regex101.com for testing your regex on test
+
+regex building blocks:
+.     - any character Eecpt New Line
+\d    - digit (0-9)
+\D    - Not a Digit (0-9)
+\w    - word character (a-z, A-Z, 0-9, _)
+\W    - not a word character
+\s    - whitespace (space, tab, newline)
+\S    - Not whitespace
+
+\b    - Word Boundary
+\B    - not a word boundary
+^     - Beginnging of a String
+$     -  End of a String
+
+[]    - matches characters in brackets
+[^]   - matches characters NOT in brackets
+|     - Either Or
+( )   - Group
+
+
+Quantifiers:
+*     - 0 or More
++     - 1 or More
+?     - 0 or One
+{3}   - Exact Number
+{3,4} - Range of Numbers (Min, Max)
+
+
+Escaping:
+.[{()\^$|?*+
+Escaping by using \ eg:  \. 
+#########################################
+example text
+#########################################
+
+cat
+mat
+pat
+bat
+
+321-555-4321
+123.555.1234
+123*555*1234
+800-555-4321
+900-555-4321
+
+Mr. Schafer
+Mr Smith
+Ms Davis
+Mrs. Robinson
+Mr. T
+
+
+# some regex to apply on the numbers above. check them out!
+
+\d\d\d.\d\d\d\.d\d\d\d
+\d\d\d[-.]\d\d\d[-.]\d\d\d\d
+[89]00[-.]\d\d\d[-.]\d\d\d\d
+[1-7]
+[a-z]
+[a-zA-Z]
+[^a-z] # is not lower case letter
+[^b]at
+
+\d\d\d.\d\d\d\.d\d\d\d
+\d{3}.\d{3}\d{4}
+\d{3}.\d{3}\d{4}
+Mr\.
+Mr\.?
+Mr\.?\s[A-Z]
+Mr\.?\s[A-Z]\w*
+
+M(r|s|rs)\.?\s[A-Z]\w*
+
+###################### now email
+
+CoreyMSchafer@gmail.com
+corey.schafer@university.edu
+corey-321-schafer@my-work.net
+
+
+[a-zA-Z]
+[a-zA-Z]+@[a-zA-Z]+\.com
+[a-zA-Z0-9.-]+@[a-zA-Z-]+\.(com|edu|net)
+
+
+###################### now web urls and back references. 
+
+https://www.google.de
+http://coreyms.com
+https://youtube.com
+https://www.nasa.gov
+
+https?://(www\.)?\w+\.\w+ 
+https?://(www\.)?(\w+)(\.\w+)
+Group 2:  $2 # put this in the replace prompt of your tool or code 
+$2$3 
+
+
+
+
+
+
+
+
